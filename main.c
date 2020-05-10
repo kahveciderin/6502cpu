@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <addressing_modes.h>
+#include "addressing_modes.h"
 const uint8_t sizes[256] = {};
 const bool inst_adr_touch[256] = {};
 const uint16_t instr_addressing[256] = {};
