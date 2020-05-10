@@ -21,7 +21,11 @@ int main(int argc, char *kwargs[]) {
     uint8_t Y;
     uint8_t status;
     ip = ((uint16_t)address_space[0xfffd] << 8) | (uint16_t)address_space[0xfffc];
+    int isInstruction = 0;
+    bool increment = false;
+    uint16_t value = 0x0;
     while (1) {
+        if(isInstruction == 0){
         switch (address_space[ip]) {
             //AND
             case 0x29:
