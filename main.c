@@ -25,7 +25,6 @@ int main(int argc, char *kwargs[]) {
     bool increment = false;
     uint16_t value = 0x0;
     while (1) {
-        if(isInstruction == 0){
         switch (address_space[ip]) {
 
 
@@ -781,4 +780,5 @@ break;
             ip += sizes[address_space[ip]];
         }
     }
+
 }
