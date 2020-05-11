@@ -6,7 +6,7 @@
 const uint8_t sizes[256] = {};
 const bool inst_adr_touch[256] = {};
 const uint16_t instr_addressing[256] = {};
-extern void execute_cycle(uint8_t *address_space, uint16_t *ip, uint8_t *accum, uint8_t *X, uint8_t *Y, uint8_t *status);
+//extern void execute_cycle(uint8_t *address_space, uint16_t *ip, uint8_t *accum, uint8_t *X, uint8_t *Y, uint8_t *status);
 int main(int argc, char *kwargs[]) {
     if (argc != 2) {
         printf("Usage: %s binary_file.bin\n", kwargs[0]);
@@ -25,8 +25,6 @@ int main(int argc, char *kwargs[]) {
     uint8_t Y;
     uint8_t status;
     ip = ((uint16_t)address_space[0xfffd] << 8) | (uint16_t)address_space[0xfffc];
-    int isInstruction = 0;
-    bool increment = false;
     uint16_t value = 0x0;
     while (1) {
         switch (address_space[ip]) {
