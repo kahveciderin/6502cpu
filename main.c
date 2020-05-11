@@ -27,56 +27,37 @@ int main(int argc, char *kwargs[]) {
     while (1) {
         if(isInstruction == 0){
         switch (address_space[ip]) {
-            case 0x00:
 
+
+case 0x00:
+//BRK impl
 break;
 case 0x01:
-
-break;
-case 0x02:
-
-break;
-case 0x03:
-
-break;
-case 0x04:
-
+//ORA X,ind
 break;
 case 0x05:
-
+//ORA zpg
 break;
 case 0x06:
-
-break;
-case 0x07:
-
+//ASL zpg
 break;
 case 0x08:
-
+//PHP impl
 break;
 case 0x09:
-
+//ORA #
 break;
 case 0x0a:
-
-break;
-case 0x0b:
-
-break;
-case 0x0c:
-
+//ASL A
 break;
 case 0x0d:
-
+//ORA abs
 break;
 case 0x0e:
-
-break;
-case 0x0f:
-
+//ASL abs
 break;
 case 0x10:
-
+//BPL rel
 break;
 case 0x11:
 
