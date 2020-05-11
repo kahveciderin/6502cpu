@@ -8,7 +8,11 @@ const bool inst_adr_touch[256] = {};
 const uint16_t instr_addressing[256] = {};
 //extern void execute_cycle(uint8_t *address_space, uint16_t *ip, uint8_t *accum, uint8_t *X, uint8_t *Y, uint8_t *status);
 int main(int argc, char *kwargs[]) {
-    FILE *f = fopen("textfile.txt", "rb");
+    if (argc != 2) {
+        printf("Usage: %s binary_file.bin\n", kwargs[0]);
+        return -1;
+    } 
+    FILE *f = fopen(kwargs[1], "rb");
     uint8_t *address_space = malloc(65536);
     fseek(f, 0, SEEK_END);
     long fsize = ftell(f);
