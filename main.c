@@ -28,37 +28,56 @@ int main(int argc, char *kwargs[]) {
     uint16_t value = 0x0;
     while (1) {
         switch (address_space[ip]) {
-
-
 case 0x00:
-//BRK impl
+
 break;
 case 0x01:
-//ORA X,ind
+
+break;
+case 0x02:
+
+break;
+case 0x03:
+
+break;
+case 0x04:
+
 break;
 case 0x05:
-//ORA zpg
+
 break;
 case 0x06:
-//ASL zpg
+
+break;
+case 0x07:
+
 break;
 case 0x08:
-//PHP impl
+
 break;
 case 0x09:
-//ORA #
+
 break;
 case 0x0a:
-//ASL A
+
+break;
+case 0x0b:
+
+break;
+case 0x0c:
+
 break;
 case 0x0d:
-//ORA abs
+
 break;
 case 0x0e:
-//ASL abs
+
+break;
+case 0x0f:
+
 break;
 case 0x10:
-//BPL rel
+
 break;
 case 0x11:
 
@@ -777,6 +796,8 @@ break;
 case 0xff:
 
 break;
+
+
         }
         if (!inst_adr_touch[address_space[ip]]) {
             ip += sizes[address_space[ip]];
