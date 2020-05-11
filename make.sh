@@ -1,0 +1,1 @@
+sudo gcc main.c -o /tmp/prog_main_asdf && chmod +x /tmp/prog_main_asdf && /tmp/prog_main_asdf
