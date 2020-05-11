@@ -14,3 +14,10 @@ enum addressing_mode {
     AM_zpg_Y,
     AM_NONEXIST,
 };
+typedef struct cpu_state {
+    uint16_t ip;
+    uint8_t accum;
+    uint8_t X;
+    uint8_t Y;
+    uint8_t status;
+} cpu_state_t;

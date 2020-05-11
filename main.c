@@ -20,15 +20,11 @@ int main(int argc, char *kwargs[]) {
     fseek(f, 0, SEEK_SET);
     fread(address_space + 65536 / 2, fsize, 1, f);
     fclose(f);
-    uint16_t ip;
-    uint8_t accum;
-    uint8_t X;
-    uint8_t Y;
-    uint8_t status;
-    ip = ((uint16_t)address_space[0xfffd] << 8) | (uint16_t)address_space[0xfffc];
+    cpu_state_t state;
+    state.ip = ((uint16_t)address_space[0xfffd] << 8) | (uint16_t)address_space[0xfffc];
     uint16_t value = 0x0;
     while (1) {
-        switch (address_space[ip]) {
+        switch (address_space[state.ip]) {
 case 0x00:
 
 break;
@@ -800,8 +796,8 @@ break;
 
 
         }
-        if (!inst_adr_touch[address_space[ip]]) {
-            ip += sizes[address_space[ip]];
+        if (!inst_adr_touch[address_space[state.ip]]) {
+            state.ip += sizes[address_space[state.ip]];
         }
     }
 
