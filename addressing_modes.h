@@ -11,5 +11,6 @@ enum addressing_mode {
     AM_rel,
     AM_zpg,
     AM_zpg_X,
-    AM_zpg_Y
+    AM_zpg_Y,
+    AM_NONEXIST
 };
