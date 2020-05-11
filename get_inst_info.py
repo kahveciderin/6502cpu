@@ -13,7 +13,21 @@ valid_instrs = [
     "zeropage,X",
     "zeropage,Y"
 ]
-
+jumping_opcodes = [
+    "BCC",
+    "BCS",
+    "BEQ",
+    "BMI",
+    "BNE",
+    "BPL",
+    "BRK",
+    "BVC",
+    "BVS",
+    "JMP",
+    "JSR",
+    "RTI",
+    "RTS"
+]
 
 data = []
 with open("instruction_data", "r") as f:
