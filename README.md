@@ -1,2 +1,2 @@
 # arm32
-ilkcan vs deniz
+ilkcan & deniz
