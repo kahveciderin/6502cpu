@@ -12,11 +12,11 @@ uint8_t read_mem(uint16_t address, uint8_t *membuf) {
     //TODO: memory mapped I/O stuff goes here
     return membuf[address];
 }
-void write_param(cpu_state_t *state, uint8_t *membuf, uint8_t value) {
-
+void write_mem(uint16_t address, uint8_t *membuf, uint8_t value) {
+    membuf[address] = value;
 }
-uint8_t read_param(cpu_state_t *state, uint8_t *membuf) {
-    
+uint16_t read_param(uint16_t address, uint8_t *membuf, cpu_state_t *state) {
+
 }
 int main(int argc, char *kwargs[]) {
     if (argc != 2) {
