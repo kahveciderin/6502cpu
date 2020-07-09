@@ -741,7 +741,7 @@ int main(int argc, char *kwargs[]) {
         
         // NOP (implied) -  No Operation
         case 0xEA:
-
+        //this is a joke, right?
         break;
         
         // CPX (absolute) -  Compare Memory and Index X
