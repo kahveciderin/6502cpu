@@ -33,7 +33,17 @@ int main(int argc, char *kwargs[]) {
     cpu_state_t state;
     state.ip = ((uint16_t)address_space[0xfffd] << 8) | (uint16_t)address_space[0xfffc];
     uint16_t value = 0x0;
-    while (1) switch (address_space[state.ip]) {
+    while (1) { 
+    
+    int arguments[sizes[address_space[state.ip]]];
+
+    for(int i = 0; i < sizes[address_space[state.ip]]; i++){
+
+        arguments[i] = address_space[state.ip] + i + 1;
+    }
+
+    switch (address_space[state.ip]) {
+
         // BRK (implied) -  Force Break
         case 0x00:
 
@@ -521,7 +531,7 @@ int main(int argc, char *kwargs[]) {
         
         // LDA (immidiate) -  Load Accumulator with Memory
         case 0xA9:
-
+            state.accum = arguments[0];
         break;
         
         // TAX (implied) -  Transfer Accumulator to Index X
@@ -793,3 +803,5 @@ int main(int argc, char *kwargs[]) {
             state.ip += sizes[address_space[state.ip]];
         }
     }
+
+}
