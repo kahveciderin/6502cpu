@@ -232,7 +232,7 @@ int main(int argc, char *kwargs[]) {
         // EOR ((indirect,X)) -  Exclusive-OR Memory with Accumulator
         case 0x41:
 
-        break;
+        break; 
         
         // EOR (zeropage) -  Exclusive-OR Memory with Accumulator
         case 0x45:
@@ -261,7 +261,7 @@ int main(int argc, char *kwargs[]) {
         
         // JMP (absolute) -  Jump to New Location
         case 0x4C:
-
+        state.ip = arguments[1] * 256 + arguments[0];
         break;
         
         // EOR (absolute) -  Exclusive-OR Memory with Accumulator
